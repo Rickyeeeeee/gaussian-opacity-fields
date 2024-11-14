@@ -39,7 +39,7 @@ class Scene:
 
         self.train_cameras = {}
         self.test_cameras = {}
-
+        print("Loading scene from {}".format(args.source_path))
         if os.path.exists(os.path.join(args.source_path, "sparse")):
             scene_info = sceneLoadTypeCallbacks["Colmap"](args.source_path, args.images, args.eval, sample_interval=args.sample_interval)
         elif os.path.exists(os.path.join(args.source_path, "transforms_train.json")):
